@@ -1,0 +1,56 @@
+﻿@model assignment1.Models.Game
+
+@{
+    ViewData["Title"] = "Delete " + Model.Title;
+}
+
+<h3>Are you sure you want to delete @Html.DisplayFor(model => model.Title)?</h3>
+
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Developer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Developer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseYear)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="GameId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
